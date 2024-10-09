@@ -1,0 +1,35 @@
+   # Virtual Environment
+   venv/
+   env/
+   *.pyc
+   __pycache__/
+
+   # IDE specific files
+   .vscode/
+   .idea/
+
+   # OS generated files
+   .DS_Store
+   Thumbs.db
+
+   # Logs
+   *.log
+
+   # Temporary files
+   *.tmp
+
+   # Database files
+   *.db
+   *.sqlite3
+
+   # Environment variables
+   .env
+
+   # Compiled Python files
+   *.pyc
+   *.pyo
+   *.pyd
+
+   # Python egg metadata, regenerated from source files by setuptools
+   /*.egg-info
+   /*.egg
