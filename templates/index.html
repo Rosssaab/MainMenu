@@ -6,6 +6,14 @@
     <title>My Web Sites</title>
     <!-- Bootstrap CSS with Darkly theme -->
     <link id="theme-style" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css">
+    <style>
+        .custom-select {
+            width: auto;
+            min-width: 100px;
+            max-width: 200px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,8 +24,10 @@
                 </div>
                 <div class="col-md-4">
                     <label for="theme-select" class="form-label visually-hidden">Select Theme:</label>
-                    <select id="theme-select" class="form-select">
+                    <select id="theme-select" class="form-select form-select-sm custom-select">
                         <option value="default">Default</option>
+                        <option value="cerulean">Cerulean</option>
+                        <option value="cosmo">Cosmo</option>
                         <option value="cyborg">Cyborg</option>
                         <option value="darkly" selected>Darkly</option>
                         <option value="lumen">Lumen</option>
@@ -32,9 +42,9 @@
         
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-                <a href="http://www.mywebstuff.co.uk:81" class="btn btn-lg btn-primary m-2">Book Search</a>
-                <a href="http://b.com" class="btn btn-lg btn-success m-2">Website B</a>
-                <a href="http://c.com" class="btn btn-lg btn-info m-2">Website C</a>
+                <a href="http://www.mywebstuff.co.uk:8080" class="btn btn-lg btn-primary m-2">Google Book Search</a>
+                <a href="http://www.mywebstuff.co.uk:8081" class="btn btn-lg btn-primary m-2">Spotify Song Search</a>
+               <!-- <a href="http://c.com" class="btn btn-lg btn-info m-2">Website C</a>-->
             </div>
         </div>
     </div>
@@ -44,5 +54,13 @@
     
     <!-- Theme Switcher Script -->
     <script src="{{ url_for('static', filename='js/theme_switcher.js') }}"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var select = document.getElementById('theme-select');
+            var longestOption = Array.from(select.options).reduce((a, b) => a.text.length > b.text.length ? a : b);
+            select.style.width = longestOption.text.length + 'ch';
+        });
+    </script>
 </body>
 </html>
