@@ -62,6 +62,22 @@
             font-size: 0.9rem;
             color: #6c757d;
         }
+        .footer-banner {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-banner a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer-banner a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -161,8 +177,13 @@
                         <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded app-image">
                     </div>
                 </div>
-                <div class="visitor-counter">
-                    Visitor Count: {{ visitor_count }}
+                <div class="footer-banner">
+                    <div>
+                        <a href="mailto:rosssaab@live.com?subject=Enquiry%20from%20Demo%20Site">Contact for Custom Development</a>
+                    </div>
+                    <div class="visitor-counter">
+                        Visitor Count: {{ visitor_count }}
+                    </div>
                 </div>
             </div>
         </div>
