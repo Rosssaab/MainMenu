@@ -32,7 +32,7 @@
             margin-bottom: 2rem;
         }
         .app-row {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
         .app-description {
             margin-top: 0.5rem;
@@ -40,6 +40,7 @@
         .app-image {
             max-height: 100px;
             width: auto;
+            margin-bottom: 0.5rem;
         }
         .header-3d {
             background: linear-gradient(45deg, #1a237e, #3949ab);
@@ -108,6 +109,17 @@
                 padding: 3px 12px;
             }
         }
+        .app-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+        .app-button:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
@@ -146,57 +158,57 @@
             <div class="col-lg-10">
                 <div class="row app-row">
                     <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                        <a href="http://www.mywebstuff.co.uk/FilmSearch" class="btn btn-xl btn-primary w-100">TMDB Movie Search</a>
+                        <a href="http://www.mywebstuff.co.uk/FilmSearch" class="app-button">
+                            <img src="{{ url_for('static', filename='images/movie_icon.gif') }}" alt="Movie icon" class="img-fluid rounded app-image">
+                            <button class="btn btn-xl btn-primary">TMDB Movie Search</button>
+                        </a>
                     </div>
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         <p class="app-description">Search for movies using The Movie Database (TMDB) API. Get detailed information about films, including ratings, cast, and release dates.</p>
                     </div>
-                    <div class="col-md-3 col-sm-12 text-center">
-                        <img src="{{ url_for('static', filename='images/movie_icon.gif') }}" alt="Movie icon" class="img-fluid rounded app-image">
-                    </div>
                 </div>
                 <div class="row app-row">
                     <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                        <a href="http://www.mywebstuff.co.uk/SongSearch" class="btn btn-xl btn-primary w-100">Spotify Song Search</a>
+                        <a href="http://www.mywebstuff.co.uk/SongSearch" class="app-button">
+                            <img src="{{ url_for('static', filename='images/music_icon.gif') }}" alt="Music icon" class="img-fluid rounded app-image">
+                            <button class="btn btn-xl btn-primary">Spotify Song Search</button>
+                        </a>
                     </div>
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         <p class="app-description">Find songs, artists, and albums using the Spotify API. Discover new music and get track information, including popularity and audio features.</p>
                     </div>
-                    <div class="col-md-3 col-sm-12 text-center">
-                        <img src="{{ url_for('static', filename='images/music_icon.gif') }}" alt="Music icon" class="img-fluid rounded app-image">
-                    </div>
                 </div>
                 <div class="row app-row">
                     <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                        <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="btn btn-xl btn-primary w-100">Vehicle DVLA lookup</a>
+                        <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="app-button">
+                            <img src="{{ url_for('static', filename='images/car_icon.gif') }}" alt="Car icon" class="img-fluid rounded app-image">
+                            <button class="btn btn-xl btn-primary">Vehicle DVLA lookup</button>
+                        </a>
                     </div>
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         <p class="app-description">Look up vehicle information using the DVLA (Driver and Vehicle Licensing Agency) database. Get details about a vehicle's make, model, and registration status.</p>
                     </div>
-                    <div class="col-md-3 col-sm-12 text-center">
-                        <img src="{{ url_for('static', filename='images/car_icon.gif') }}" alt="Car icon" class="img-fluid rounded app-image">
-                    </div>
                 </div>
                 <div class="row app-row">
                     <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                        <a href="http://www.mywebstuff.co.uk/BookSearch" class="btn btn-xl btn-primary w-100">Google Book Search</a>
+                        <a href="http://www.mywebstuff.co.uk/BookSearch" class="app-button">
+                            <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded app-image">
+                            <button class="btn btn-xl btn-primary">Google Book Search</button>
+                        </a>
                     </div>
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         <p class="app-description">Search for books using the Google Books API. Find information about books, including authors, publishers, and summaries.</p>
                     </div>
-                    <div class="col-md-3 col-sm-12 text-center">
-                        <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded app-image">
-                    </div>
                 </div>
                 <div class="row app-row">
                     <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                        <a href="mailto:rosssaab@live.com?subject=Enquiry%20from%20Demo%20Site" class="btn btn-xl btn-primary w-100">Contact for Custom Development</a>
+                        <a href="mailto:rosssaab@live.com?subject=Enquiry%20from%20Demo%20Site" class="app-button">
+                            <img src="{{ url_for('static', filename='images/contact_icon.gif') }}" alt="Contact icon" class="img-fluid rounded app-image">
+                            <button class="btn btn-xl btn-primary">Contact for Custom Development</button>
+                        </a>
                     </div>
-                    <div class="col-md-5 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         <p class="app-description">Interested in custom web development? Contact me for tailored solutions to meet your specific needs and requirements.</p>
-                    </div>
-                    <div class="col-md-3 col-sm-12 text-center">
-                        <img src="{{ url_for('static', filename='images/contact_icon.gif') }}" alt="Contact icon" class="img-fluid rounded app-image">
                     </div>
                 </div>
                 <div class="footer-banner">
