@@ -16,6 +16,24 @@
     </style>
 </head>
 <body>
+    <!-- Add this modal HTML just after the opening <body> tag -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="welcomeModalLabel">My Web Stuff Demos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is where you'll add the paragraph you want to edit later.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <header class="bg-primary text-white py-4 my-4">
             <div class="row align-items-center">
@@ -42,9 +60,10 @@
         
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-                <a href="http://www.mywebstuff.co.uk:8083" class="btn btn-lg btn-primary m-2">TMDB Movie Search</a><br>
-                <a href="http://www.mywebstuff.co.uk:8082" class="btn btn-lg btn-primary m-2">Spotify Song Search</a><br>
-                <a href="http://www.mywebstuff.co.uk:8081" class="btn btn-lg btn-primary m-2">Google Book Search</a><br>
+                <a href="http://www.mywebstuff.co.uk/MovieSearch" class="btn btn-lg btn-primary m-2">TMDB Movie Search</a><br>
+                <a href="http://www.mywebstuff.co.uk/SongSearch" class="btn btn-lg btn-primary m-2">Spotify Song Search</a><br>
+                <a href="http://www.mywebstuff.co.uk/BookSearch" class="btn btn-lg btn-primary m-2">Google Book Search</a><br>
+                <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="btn btn-lg btn-primary m-2">Vehicle DVLA lookup</a><br>
             </div>
         </div>
     </div>
@@ -60,6 +79,10 @@
             var select = document.getElementById('theme-select');
             var longestOption = Array.from(select.options).reduce((a, b) => a.text.length > b.text.length ? a : b);
             select.style.width = longestOption.text.length + 'ch';
+
+            // Show the welcome modal
+            var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            welcomeModal.show();
         });
     </script>
 </body>

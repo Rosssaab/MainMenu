@@ -8,6 +8,8 @@ PORT_MAPPINGS = {
     'MainMenu': 8080,
     'BookSearch': 8081,
     'SongSearch': 8082,
+    'FilmSearch': 8083,
+    'DvlaSearch': 8084
 }
 
 # Keep your existing routes here
