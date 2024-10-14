@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Sites</title>
+    <title>My Web Stuff</title>
     <!-- Bootstrap CSS with Darkly theme -->
     <link id="theme-style" rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css">
@@ -14,6 +14,47 @@
             min-width: 100px;
             max-width: 200px;
             display: inline-block;
+        }
+        .btn-xl {
+            padding: 0.75rem 1.25rem;
+            font-size: 1.3rem;
+        }
+        @media (max-width: 767px) {
+            .btn-xl {
+                font-size: 1.1rem;
+                padding: 0.6rem 0.9rem;
+            }
+        }
+        .app-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 2rem;
+        }
+        .app-row {
+            margin-bottom: 1rem;
+        }
+        .app-description {
+            margin-top: 0.5rem;
+        }
+        .app-image {
+            max-height: 100px;
+            width: auto;
+        }
+        .header-3d {
+            background: linear-gradient(45deg, #1a237e, #3949ab);
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            transform: perspective(1000px) rotateX(5deg);
+            transition: all 0.3s ease;
+        }
+        .header-3d:hover {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        .header-3d h1 {
+            font-weight: bold;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -45,14 +86,14 @@
     </div>
 
     <div class="container">
-        <header class="bg-primary text-white py-4 my-4">
+        <header class="header-3d py-4 my-4 rounded">
             <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h1 class="text-center mb-0">My Web Sites</h1>
+                <div class="col-md-8 col-sm-12">
+                    <h1 class="text-center mb-0">My Web Stuff</h1>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12 mt-3 mt-md-0">
                     <label for="theme-select" class="form-label visually-hidden">Select Theme:</label>
-                    <select id="theme-select" class="form-select form-select-sm custom-select">
+                    <select id="theme-select" class="form-select form-select-sm custom-select mx-auto">
                         <option value="default">Default</option>
                         <option value="cerulean">Cerulean</option>
                         <option value="cosmo">Cosmo</option>
@@ -69,49 +110,49 @@
         </header>
 
         <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="row mb-4 align-items-center">
-                    <div class="col-md-3">
-                        <a href="http://www.mywebstuff.co.uk/FilmSearch" class="btn btn-lg btn-primary w-100">TMDB Movie Search</a>
+            <div class="col-lg-10">
+                <div class="row app-row">
+                    <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                        <a href="http://www.mywebstuff.co.uk/FilmSearch" class="btn btn-xl btn-primary w-100">TMDB Movie Search</a>
                     </div>
-                    <div class="col-md-6">
-                        <p class="mb-0">Search for movies using The Movie Database (TMDB) API. Get detailed information about films, including ratings, cast, and release dates.</p>
+                    <div class="col-md-5 col-sm-12">
+                        <p class="app-description">Search for movies using The Movie Database (TMDB) API. Get detailed information about films, including ratings, cast, and release dates.</p>
                     </div>
-                    <div class="col-md-3">
-                        <img src="{{ url_for('static', filename='images/movie_icon.gif') }}" alt="Movie icon" class="img-fluid rounded">
-                    </div>
-                </div>
-                <div class="row mb-4 align-items-center">
-                    <div class="col-md-3">
-                        <a href="http://www.mywebstuff.co.uk/SongSearch" class="btn btn-lg btn-primary w-100">Spotify Song Search</a>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="mb-0">Find songs, artists, and albums using the Spotify API. Discover new music and get track information, including popularity and audio features.</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="{{ url_for('static', filename='images/music_icon.gif') }}" alt="Music icon" class="img-fluid rounded">
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <img src="{{ url_for('static', filename='images/movie_icon.gif') }}" alt="Movie icon" class="img-fluid rounded app-image">
                     </div>
                 </div>
-                <div class="row mb-4 align-items-center">
-                    <div class="col-md-3">
-                        <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="btn btn-lg btn-primary w-100">Vehicle DVLA lookup</a>
+                <div class="row app-row">
+                    <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                        <a href="http://www.mywebstuff.co.uk/SongSearch" class="btn btn-xl btn-primary w-100">Spotify Song Search</a>
                     </div>
-                    <div class="col-md-6">
-                        <p class="mb-0">Look up vehicle information using the DVLA (Driver and Vehicle Licensing Agency) database. Get details about a vehicle's make, model, and registration status.</p>
+                    <div class="col-md-5 col-sm-12">
+                        <p class="app-description">Find songs, artists, and albums using the Spotify API. Discover new music and get track information, including popularity and audio features.</p>
                     </div>
-                    <div class="col-md-3">
-                        <img src="{{ url_for('static', filename='images/car_icon.gif') }}" alt="Car icon" class="img-fluid rounded">
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <img src="{{ url_for('static', filename='images/music_icon.gif') }}" alt="Music icon" class="img-fluid rounded app-image">
                     </div>
                 </div>
-                <div class="row mb-4 align-items-center">
-                    <div class="col-md-3">
-                        <a href="http://www.mywebstuff.co.uk/BookSearch" class="btn btn-lg btn-primary w-100">Google Book Search</a>
+                <div class="row app-row">
+                    <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                        <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="btn btn-xl btn-primary w-100">Vehicle DVLA lookup</a>
                     </div>
-                    <div class="col-md-6">
-                        <p class="mb-0">Search for books using the Google Books API. Find information about books, including authors, publishers, and summaries.</p>
+                    <div class="col-md-5 col-sm-12">
+                        <p class="app-description">Look up vehicle information using the DVLA (Driver and Vehicle Licensing Agency) database. Get details about a vehicle's make, model, and registration status.</p>
                     </div>
-                    <div class="col-md-3">
-                        <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded">
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <img src="{{ url_for('static', filename='images/car_icon.gif') }}" alt="Car icon" class="img-fluid rounded app-image">
+                    </div>
+                </div>
+                <div class="row app-row">
+                    <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                        <a href="http://www.mywebstuff.co.uk/BookSearch" class="btn btn-xl btn-primary w-100">Google Book Search</a>
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <p class="app-description">Search for books using the Google Books API. Find information about books, including authors, publishers, and summaries.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded app-image">
                     </div>
                 </div>
             </div>
