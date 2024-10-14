@@ -63,20 +63,30 @@
             color: #6c757d;
         }
         .footer-banner {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-top: 2rem;
+            background: linear-gradient(45deg, #1a237e, #3949ab);
+            color: #ffffff;
+            box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+            padding: 4px 15px;
+            margin-top: 1rem;
+            border-radius: 0 0 15px 15px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
         }
-        .footer-banner a {
-            color: #007bff;
-            text-decoration: none;
+        .visitor-counter {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            white-space: nowrap;
         }
-        .footer-banner a:hover {
-            text-decoration: underline;
+        @media (max-width: 767px) {
+            .visitor-counter {
+                font-size: 0.9rem;
+            }
+            .footer-banner {
+                padding: 3px 12px;
+            }
         }
     </style>
 </head>
@@ -177,12 +187,20 @@
                         <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded app-image">
                     </div>
                 </div>
-                <div class="footer-banner">
-                    <div>
-                        <a href="mailto:rosssaab@live.com?subject=Enquiry%20from%20Demo%20Site">Contact for Custom Development</a>
+                <div class="row app-row">
+                    <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
+                        <a href="mailto:rosssaab@live.com?subject=Enquiry%20from%20Demo%20Site" class="btn btn-xl btn-primary w-100">Contact for Custom Development</a>
                     </div>
+                    <div class="col-md-5 col-sm-12">
+                        <p class="app-description">Interested in custom web development? Contact me for tailored solutions to meet your specific needs and requirements.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <img src="{{ url_for('static', filename='images/contact_icon.gif') }}" alt="Contact icon" class="img-fluid rounded app-image">
+                    </div>
+                </div>
+                <div class="footer-banner">
                     <div class="visitor-counter">
-                        Visitor Count: {{ visitor_count }}
+                        Visitors: {{ visitor_count }}
                     </div>
                 </div>
             </div>
