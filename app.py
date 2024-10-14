@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 # Define your port mappings here
 PORT_MAPPINGS = {
-    'app1': 8081,
-    'app2': 8082,
-    'app3': 8083,
+    'MainMenu': 8080,
+    'BookSearch': 8081,
+    'SongSearch': 8082,
 }
 
 # Keep your existing routes here
@@ -21,8 +21,10 @@ def index():
 @app.route('/<app_name>')
 def redirect_to_app(app_name):
     if app_name in PORT_MAPPINGS:
-        return redirect(f"http://localhost:{PORT_MAPPINGS[app_name]}")
+        return redirect(f"http://mywebstuff.co.uk:{PORT_MAPPINGS[app_name]}")
     return f"No application named {app_name} found.", 404
 
 if __name__ == '__main__':
-    serve(app, host='0.0.0.0', port=80)
+    from waitress import serve
+    print("Starting server on http://localhost:8080")
+    serve(app, host='0.0.0.0', port=8080)
