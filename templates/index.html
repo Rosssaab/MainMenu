@@ -70,19 +70,39 @@
             margin-top: 1rem;
             border-radius: 0 0 15px 15px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
         }
-        .visitor-counter {
+        .visitor-counter, .theme-selector {
             font-size: 1rem;
             font-weight: bold;
             color: #ffffff;
             line-height: 1.2;
             white-space: nowrap;
         }
+        .theme-selector select {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        .theme-selector select option {
+            background-color: #3949ab;
+            color: #ffffff;
+        }
+        .theme-selector select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+        }
         @media (max-width: 767px) {
-            .visitor-counter {
+            .visitor-counter, .theme-selector {
                 font-size: 0.9rem;
+            }
+            .theme-selector select {
+                font-size: 0.8rem;
             }
             .footer-banner {
                 padding: 3px 12px;
@@ -119,26 +139,7 @@
 
     <div class="container main-container">
         <header class="header-3d py-4 my-4 rounded">
-            <div class="row align-items-center">
-                <div class="col-md-8 col-sm-12">
-                    <h1 class="text-center mb-0">My Web Stuff</h1>
-                </div>
-                <div class="col-md-4 col-sm-12 mt-3 mt-md-0">
-                    <label for="theme-select" class="form-label visually-hidden">Select Theme:</label>
-                    <select id="theme-select" class="form-select form-select-sm custom-select mx-auto">
-                        <option value="default">Default</option>
-                        <option value="cerulean">Cerulean</option>
-                        <option value="cosmo">Cosmo</option>
-                        <option value="cyborg">Cyborg</option>
-                        <option value="darkly" selected>Darkly</option>
-                        <option value="lumen">Lumen</option>
-                        <option value="minty">Minty</option>
-                        <option value="pulse">Pulse</option>
-                        <option value="sandstone">Sandstone</option>
-                        <option value="solar">Solar</option>
-                    </select>
-                </div>
-            </div>
+            <h1 class="text-center mb-0">My Web Stuff</h1>
         </header>
 
         <div class="row justify-content-center">
@@ -199,6 +200,32 @@
                     </div>
                 </div>
                 <div class="footer-banner">
+                    <div class="theme-selector">
+                        Theme: 
+                        <select id="theme-select">
+                            <option value="darkly">Darkly</option>
+                            <option value="flatly">Flatly</option>
+                            <option value="superhero">Superhero</option>
+                            <option value="cerulean">Cerulean</option>
+                            <option value="cosmo">Cosmo</option>
+                            <option value="cyborg">Cyborg</option>
+                            <option value="journal">Journal</option>
+                            <option value="litera">Litera</option>
+                            <option value="lumen">Lumen</option>
+                            <option value="lux">Lux</option>
+                            <option value="materia">Materia</option>
+                            <option value="minty">Minty</option>
+                            <option value="pulse">Pulse</option>
+                            <option value="sandstone">Sandstone</option>
+                            <option value="simplex">Simplex</option>
+                            <option value="sketchy">Sketchy</option>
+                            <option value="slate">Slate</option>
+                            <option value="solar">Solar</option>
+                            <option value="spacelab">Spacelab</option>
+                            <option value="united">United</option>
+                            <option value="yeti">Yeti</option>
+                        </select>
+                    </div>
                     <div class="visitor-counter">
                         Visitors: {{ visitor_count }}
                     </div>
