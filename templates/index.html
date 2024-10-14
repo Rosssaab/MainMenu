@@ -56,6 +56,12 @@
             font-weight: bold;
             letter-spacing: 2px;
         }
+        .visitor-counter {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
     </style>
 </head>
 
@@ -85,7 +91,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container main-container">
         <header class="header-3d py-4 my-4 rounded">
             <div class="row align-items-center">
                 <div class="col-md-8 col-sm-12">
@@ -154,6 +160,9 @@
                     <div class="col-md-3 col-sm-12 text-center">
                         <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded app-image">
                     </div>
+                </div>
+                <div class="visitor-counter">
+                    Visitor Count: {{ visitor_count }}
                 </div>
             </div>
         </div>
