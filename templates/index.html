@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Sites</title>
     <!-- Bootstrap CSS with Darkly theme -->
-    <link id="theme-style" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css">
+    <link id="theme-style" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css">
     <style>
         .custom-select {
             width: auto;
@@ -15,6 +17,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Add this modal HTML just after the opening <body> tag -->
     <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
@@ -26,10 +29,12 @@
                 </div>
                 <div class="modal-body">
                     <p> You're about to explore a collection of demo applications running on my home web server.<br>
-                        These apps showcase the incredible power and productivity that can be achieved when coding with AI assistance.<br>
-                        From chatbots to data analysis tools, each application demonstrates how AI can streamline 
-                        development processes, enhance creativity, and solve complex problems efficiently. 
-                        As you navigate through these demos, you'll witness firsthand the transformative potential of AI-assisted coding. 
+                        These apps showcase the incredible power and productivity that can be achieved when coding with
+                        AI assistance.<br>
+                        From chatbots to data analysis tools, each application demonstrates how AI can streamline
+                        development processes, enhance creativity, and solve complex problems efficiently.
+                        As you navigate through these demos, you'll witness firsthand the transformative potential of
+                        AI-assisted coding.
                         Enjoy your journey into the future of software development!</p>
                 </div>
                 <div class="modal-footer">
@@ -62,25 +67,65 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <a href="http://www.mywebstuff.co.uk/FilmSearch" class="btn btn-lg btn-primary m-2">TMDB Movie Search</a><br>
-                <a href="http://www.mywebstuff.co.uk/SongSearch" class="btn btn-lg btn-primary m-2">Spotify Song Search</a><br>
-                <a href="http://www.mywebstuff.co.uk/BookSearch" class="btn btn-lg btn-primary m-2">Google Book Search</a><br>
-                <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="btn btn-lg btn-primary m-2">Vehicle DVLA lookup</a><br>
+            <div class="col-md-10">
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-3">
+                        <a href="http://www.mywebstuff.co.uk/FilmSearch" class="btn btn-lg btn-primary w-100">TMDB Movie Search</a>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-0">Search for movies using The Movie Database (TMDB) API. Get detailed information about films, including ratings, cast, and release dates.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='images/movie_icon.gif') }}" alt="Movie icon" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-3">
+                        <a href="http://www.mywebstuff.co.uk/SongSearch" class="btn btn-lg btn-primary w-100">Spotify Song Search</a>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-0">Find songs, artists, and albums using the Spotify API. Discover new music and get track information, including popularity and audio features.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='images/music_icon.gif') }}" alt="Music icon" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-3">
+                        <a href="http://www.mywebstuff.co.uk/DvlaSearch" class="btn btn-lg btn-primary w-100">Vehicle DVLA lookup</a>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-0">Look up vehicle information using the DVLA (Driver and Vehicle Licensing Agency) database. Get details about a vehicle's make, model, and registration status.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='images/car_icon.gif') }}" alt="Car icon" class="img-fluid rounded">
+                    </div>
+                </div>
+                <div class="row mb-4 align-items-center">
+                    <div class="col-md-3">
+                        <a href="http://www.mywebstuff.co.uk/BookSearch" class="btn btn-lg btn-primary w-100">Google Book Search</a>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-0">Search for books using the Google Books API. Find information about books, including authors, publishers, and summaries.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{{ url_for('static', filename='images/books_icon.gif') }}" alt="Book icon" class="img-fluid rounded">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Theme Switcher Script -->
     <script src="{{ url_for('static', filename='js/theme_switcher.js') }}"></script>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var select = document.getElementById('theme-select');
             var longestOption = Array.from(select.options).reduce((a, b) => a.text.length > b.text.length ? a : b);
             select.style.width = longestOption.text.length + 'ch';
@@ -91,4 +136,5 @@
         });
     </script>
 </body>
+
 </html>
