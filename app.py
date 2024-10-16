@@ -10,7 +10,8 @@ PORT_MAPPINGS = {
     'BookSearch': 8081,
     'SongSearch': 8082,
     'FilmSearch': 8083,
-    'DvlaSearch': 8084
+    'DvlaSearch': 8084,
+    'BookStore': 8085
 }
 
 # Get the directory of the current script (app.py)
