@@ -312,10 +312,10 @@
             select.style.width = longestOption.text.length + 'ch';
 
             // Show the welcome modal only if it hasn't been shown in this session
-            if (!sessionStorage.getItem('welcomeModalShown')) {
+            if (!localStorage.getItem('welcomeModalShown')) {
                 var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
                 welcomeModal.show();
-                sessionStorage.setItem('welcomeModalShown', 'true');
+                localStorage.setItem('welcomeModalShown', 'true');
             }
         });
     </script>
