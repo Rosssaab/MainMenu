@@ -146,6 +146,40 @@
             max-height: 100px;
             width: auto;
         }
+        .introduction-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        .introduction-text p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .introduction-text .lead {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        .intro-content {
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            max-height: 0;
+        }
+        .intro-content.expanded {
+            max-height: 500px; /* Adjust based on content */
+            margin-top: 1rem;
+        }
+        .intro-header {
+            padding-bottom: 0.5rem;
+        }
+        #expandIntro {
+            transition: transform 0.3s ease;
+        }
+        #expandIntro.rotated {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 
@@ -179,6 +213,24 @@
         <header class="header-3d py-4 my-4 rounded">
             <h1 class="text-center mb-0">My Web Stuff</h1>
         </header>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="introduction-text mb-4">
+                        <div class="intro-header d-flex justify-content-between align-items-center">
+                            <p class="lead mb-0"><strong>Welcome to Ross Hancher's Code Portfolio</strong></p>
+                            <button class="btn btn-outline-info btn-sm" id="expandIntro">More about me</button>
+                        </div>
+                        <div class="intro-content" style="display: none;">
+                            <p>I'm a seasoned full-stack developer with over 30 years of experience in corporate IT systems. My expertise spans comprehensive database design in Oracle, SQL Server, and more, to creating intuitive GUIs across a range of languages.</p>
+                            <p>With a proven track record in diverse systems and environments, I specialize in deploying solutions on AWS, Azure, or local servers—like this site, hosted on my home machine.</p>
+                            <p>Explore my demo projects below, and feel free to reach out if you think I'm the right fit for your team!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row justify-content-center">
             <div class="col-lg-10">
@@ -365,6 +417,28 @@
                 localStorage.setItem('welcomeModalShown', 'true');
             }
         });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandBtn = document.getElementById('expandIntro');
+        const content = document.querySelector('.intro-content');
+        
+        expandBtn.addEventListener('click', function() {
+            content.classList.toggle('expanded');
+            expandBtn.classList.toggle('rotated');
+            
+            if (content.classList.contains('expanded')) {
+                content.style.display = 'block';
+                expandBtn.textContent = 'Show less';
+            } else {
+                setTimeout(() => {
+                    content.style.display = 'none';
+                }, 500); // Match transition duration
+                expandBtn.textContent = 'More about me';
+            }
+        });
+    });
     </script>
 </body>
 
